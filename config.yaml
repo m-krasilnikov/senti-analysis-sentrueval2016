@@ -1,0 +1,16 @@
+input_train_data: "data/tkk_train.csv"
+input_test_data: "data/tkk_etalon.csv"
+output_train_data: "data/preprocessed_tkk_train.csv"
+output_test_data: "data/preprocessed_tkk_test.csv"
+preprocessing:
+  steps:
+    -  replace_email_with_token
+    -  to_lower_case
+    -  replace_mentions_with_token
+    -  replace_hashtags_with_token
+    -  remove_rus_stop_words
+    -  replace_url_with_token
+    -  remove_special_words
+    -  remove_punctuation
+    -  remove_empty_text
+
