@@ -1,7 +1,7 @@
-input_train_data: "data/tkk_train.csv"
-input_test_data: "data/tkk_etalon.csv"
-output_train_data: "data/preprocessed_tkk_train.csv"
-output_test_data: "data/preprocessed_tkk_test.csv"
+input_train_data: "data/bank_train.csv"
+input_test_data: "data/bank_etalon.csv"
+output_train_data: "data/output/preprocessed_bank_train.csv"
+output_test_data: "data/output/preprocessed_bank_test.csv"
 preprocessing:
   steps:
     -  replace_email_with_token
@@ -12,5 +12,6 @@ preprocessing:
     -  replace_url_with_token
     -  remove_special_words
     -  remove_punctuation
-    -  remove_empty_text
+    -  replace_numbers_with_token
+    #-  remove_empty_text
 

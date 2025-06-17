@@ -19,6 +19,7 @@ class TextProcessor:
             'remove_rus_stop_words': self._remove_rus_stop_words,
             'remove_special_words': self._remove_special_words,
             'remove_empty_text': self._remove_empty_text,
+            'replace_numbers_with_token': self._replace_numbers_with_token
         }
 
     def run_text_processor(self, text):
@@ -45,19 +46,19 @@ class TextProcessor:
     def _to_lower_case(self, text: str):
         return text.lower()
 
-    def _replace_email_with_token(self, text, token=''):
+    def _replace_email_with_token(self, text, token='[EMAIL]'):
         email_pattern = r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+'
         return re.sub(email_pattern, token, text)
 
-    def _replace_url_with_token(self, text, token=''):
+    def _replace_url_with_token(self, text, token='[URL]'):
         url_pattern = r'https?://\S+'
         return re.sub(url_pattern, token, text)
 
-    def _replace_mentions_with_token(self, text, token=''):
+    def _replace_mentions_with_token(self, text, token='[MENTION]'):
         mention_pattern = r'@\w+'
         return re.sub(mention_pattern, token, text)
 
-    def _replace_hashtags_with_token(self, text, token=''):
+    def _replace_hashtags_with_token(self, text, token='[HASHTAG]'):
         hashtag_pattern = r'#\w+'
         return re.sub(hashtag_pattern, token, text)
 
@@ -65,10 +66,15 @@ class TextProcessor:
         pattern = r'\b(' + '|'.join(words_to_remove) + r')\b'
         return re.sub(pattern, '', text)
 
+    def _replace_numbers_with_token(self, text, token='[NUMBER]'):
+        number_pattern = r'\d+'
+        return re.sub(number_pattern, token, text)
+
     def _remove_punctuation(self, text):
         # Удаляет все знаки пунктуации
-        return text.translate(str.maketrans('', '', string.punctuation))
+        pattern = r"[»«$%^?!.:,<<>>]"
+        return re.sub(pattern, '', text)
 
     def _remove_empty_text(self, text):
         pattern = r'\s+$'
-        return text.replace(r'pattern', ' ')
+        return text.replace(pattern, ' ')

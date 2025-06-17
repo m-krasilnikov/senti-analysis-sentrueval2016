@@ -3,10 +3,6 @@ import numpy as np
 import pandas as pd
 
 class XML_parser():
-    '''
-    Класс для парсинга XML-файлов и преобразования данных для обучения или тестирования.
-    '''
-
     def xml_parse(self, filename):
         root = et.parse(filename).getroot()
         tweets = []
@@ -14,12 +10,11 @@ class XML_parser():
 
         for table in root.iter('table'):
             aux_count = 0
-            value = None  # Инициализация переменной
+            value = None
             for column in table[4:]:
                 if column.text != 'NULL':
                     value = column.text
                     aux_count += 1
-            # Добавляем только если есть ровно один ненулевой столбец
             if aux_count == 1 and value is not None:
                 classes.append(value)
                 tweets.append(table[3].text)

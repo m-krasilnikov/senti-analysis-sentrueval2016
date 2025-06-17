@@ -32,7 +32,7 @@ def process_data(config_path='config.yaml'):
     train_data = train_data.dropna()
     test_data = test_data.dropna()
 
-
+    print(config['output_train_data'])
     train_data.to_csv(config['output_train_data'], index=False)
     test_data.to_csv(config['output_test_data'], index=False)
     return train_data, test_data
