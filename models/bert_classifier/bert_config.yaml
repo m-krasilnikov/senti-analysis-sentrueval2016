@@ -1,0 +1,2 @@
+bert_checkpoint_path: "bert_checkpoints/bert_latest.ckpt"
+model: "ai-forever/ruBert-base"

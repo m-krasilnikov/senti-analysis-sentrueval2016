@@ -1,12 +1,10 @@
 from typing import Dict
-
 import torch
 from numpy import asarray
 from torch.nn import CrossEntropyLoss
 from torch.optim import Adam
 from tqdm.notebook import tqdm
-
-from model import ModelForClassification
+from .model import ModelForClassification
 
 
 class Trainer:
