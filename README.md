@@ -32,7 +32,7 @@ The project
 
 Results obtained based on the combination of CatBoost and FRIDA:
 
-```
+
 | Dataset             |       TC      |                    |           |               |               |      Banks     |                    |           |               |               |
 |---------------------|---------------|--------------------|-----------|---------------|---------------|----------------|--------------------|-----------|---------------|---------------|
 | **Measure**         |   P           |   R                | F1        | macro F1_{PN} | micro F1_{PN} | P              | **R**              |   F1      | macro F1_{PN} | micro F1_{PN} |
@@ -42,4 +42,3 @@ Results obtained based on the combination of CatBoost and FRIDA:
 | M-USE-CNN           | 64.3          | 63.12              | 63.64     | 58.97         | 71.31         | 66.06          | 68.28              | 66.71     | 58.73         | 62.41         |
 | M-USE-Trans         | 69.45         | 67.44              | 68.27     | 62.77         | 75            | **73.04**      | 71.94              | 72.4      | 65.04         | 68.21         |
 | FRIDA+CatBoost      | 78.18         | **75.37**          | **76.55** | **73.46**     | none          | 70.91          | **79.16**          | 73.78     | 69.1          | none          |
-```
