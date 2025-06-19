@@ -11,7 +11,7 @@ The results demonstrate that this method yields higher $F_1$ scores
 for both negative and positive classes, surpassing earlier 
 models based on BERT architecture. 
 
-The project 
+## The project 
 ```
 ├───data
 │   ├───input
@@ -29,9 +29,14 @@ The project
 - `text_preprocessing_utils` — Contains scripts for text preparation and a set of functions for text preprocessing.
 - `report_utils` — Contains scripts for analyzing raw data and exploring data distributions.
 - `data` — Contains the data used for analysis.
+  
+## Links
+[FRIDA on hugginface](https://huggingface.co/ai-forever/FRIDA)  
+[Catboost](https://catboost.ai/)  
+[SentiRuEval-2016 dataset](https://github.com/antongolubev5/Russian-Sentiment-Analysis-Evaluation-Datasets)
 
+## Results
 Results obtained based on the combination of CatBoost and FRIDA:
-
 
 | Dataset             |       TC      |                    |           |               |               |      Banks     |                    |           |               |               |
 |---------------------|---------------|--------------------|-----------|---------------|---------------|----------------|--------------------|-----------|---------------|---------------|
